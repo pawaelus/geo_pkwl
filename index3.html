@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Geoportal Zgierski</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	
+		
+		
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="leaflet-0.7.3/leaflet.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.ie.css" /><![endif]-->
+
+    <link rel="stylesheet" href="leaflet-sidebar.css" />
+
+
+	<script src="leaflet-0.7.3/leaflet-src.js"></script>
+	<script src="OSMBuildings-Leaflet.js"></script>
+
+
+	
+    <link rel="stylesheet" href="Leaflet.GraphicScale.min.css" />	
+	
+	<link rel="stylesheet" href="Control.MiniMap.css" />
+	<script src="Control.MiniMap.js" type="text/javascript"></script>
+   
+
+   <script src="geoJSON.js" type="text/javascript"></script>  <!-- //budynki json-->
+   
+   
+   
+   	<script type="text/javascript" src="Leaflet.Coordinates-0.1.3.min.js"></script>
+	<link rel="stylesheet" href="Leaflet.Coordinates-0.1.3.css"/>
+	
+	<link rel="stylesheet" href="Control.Loading.css" />
+    <script src="Control.Loading.js"></script>
+	
+	<link rel="stylesheet" href="leaflet.draw.css" />
+    <link rel="stylesheet" href="leaflet.measurecontrol.css" />
+	
+	
+	<script src="leaflet.control.orderlayers.min.js"></script>
+	<link rel="stylesheet" href="leaflet.control.orderlayers.css" />
+		
+	<link rel="stylesheet" href="leaflet.draw.css" />	  
+	<link rel="stylesheet" href="leaflet-measure.css">
+
+	  
+    <script src="leaflet.draw.js"></script>
+	<script src="leaflet.measurecontrol.js"></script>
+	
+	<script type="text/javascript" src="leaflet-hash.js"></script>
+
+    <link rel="stylesheet" href="Leaflet.ResizableControl.css" />
+    <script src="Leaflet.ResizableControl.js"></script>
+	
+	    <!-- the L.Control.BoxZoom code -->
+    <script src="leaflet-control-boxzoom.js"></script>
+    <link rel="stylesheet" href="leaflet-control-boxzoom.css" />
+	
+	
+<style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        html, body, #map {
+            height: 100%;
+			  width: 100%;
+            font: 10pt "Helvetica Neue", Arial, Helvetica, sans-serif;
+        }
+        .lorem {
+            font-style: italic;
+            color: #AAA;
+        }
+		
+
+</style>
+</head>
+
+<body> 
+    <div id="sidebar" class="sidebar collapsed">
+        <!-- Nav tabs -->
+        <ul class="sidebar-tabs" role="tablist">
+            <li><a href="#home" role="tab"><i class="fa fa-bars"></i></a></li>
+            <li><a href="#messages" role="tab"><i class="fa fa-comments"></i></a></li>
+            <li><a href="#settings" role="tab"><i class="fa fa-globe"></i></a></li>
+            <li><a href="#gallery" role="tab"><i class="fa fa-picture-o"></i></a></li>
+            <li><a href="#about" role="tab"><i class="fa fa-compass"></i></a></li>	
+			<li><a href="#profile" role="tab"><i class="fa fa-user"></i></a></li>
+		
+			
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="sidebar-content active">
+            <div class="sidebar-pane" id="home">
+				<h1>GEOPORTAL ZGIERSKI v 1.0</h1> 
+                <p>...czyli mapa miasta  i jego okolic ujęta formie <b>GISu</b></p>
+			
+				<h3>Idea</h3>
+				<p>Co i gdzie - czyli próba wizualizacji wydarzeń i zjawisk natury fizycznej, ekonomicznej i społecznej zachodzących  na terenie określonym jako Gmina Zgierz.</p>
+				<center><img src="spatialdiagram.png" algin="middle"/></center>
+				<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.	</p>
+				<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.	</p>
+
+            </div>
+            <div class="sidebar-pane" id="profile">
+				<h1>Autor</h1>
+				<p>Tadam tss</p>
+				<p>tralala</p>
+				</div>
+				
+            <div class="sidebar-pane" id="messages">
+				<h1>Czat</h1>
+				<p>testtest</p>
+				<P>ttesttest</p>
+				</div>
+            <div class="sidebar-pane" id="settings">	
+				<h1>Konfiguracja</h1>
+				<p>Łohoho</p>
+				<fieldset><legend>Dodaj warstwy</legend>
+				<input type="button" value="klik"><input type="button" value="klik"><input type="button" value="klik"><input type="button" value="klik">
+				</fieldset>
+				<fieldset><legend>Dodaj warstwy</legend>
+			    <input id="range-overlay-map" type="range" min=0 max=100 step=1 value=12>Przezroczystość warstwy<br>
+				<input type="radio" value="true"><br>
+				<input type="radio" value="klik"><br>
+				<input type="radio" value="klik"><br>
+				<input type="button" value="klik"><br>
+				<input type="checkbox" value="true"
+				</fieldset>
+			  
+				  
+		    <div class="sidebar-pane" id="messages">
+			
+			
+			
+			
+				<h1>Czat</h1>
+				<p></p>
+				<P>tralalalele</p>
+				</div>
+			</div>	
+			
+			<div class="sidebar-pane" id="gallery">	
+				<h1>Zgierz z lotu ptaka</h1>
+				<a href="drone_img/k_sc-tiltsmhift.jpg" data-lightbox="image-1" data-title="My caption">image #1</a><br>
+				<a href="drone_img/zgr_sc-tiltshift45.jpg" data-lightbox="image-1" data-title="My caption">image #2</a>
+				<p>tralalalalalalala</p>
+			</div>	
+			
+        </div>
+    </div>
+	<script src="leaflet-measure.min.js"></script>	
+	<script src="Leaflet.GraphicScale.min.js"></script>	
+
+    <div id="map" class="sidebar-map"></div>
+	
+
+
+	<script src="leaflet-sidebar.js"></script>
+		
+	<script>
+					jQuery(function() {
+					    var grupa = new L.LayerGroup();
+					    var topo = 'http://mapy.geoportal.gov.pl/wss/service/img/guest/TOPO/MapServer/WMSServer';
+					    var orto = 'http://mapy.geoportal.gov.pl/wss/service/img/guest/ORTO/MapServer/WMSServer';
+					    var osm = 'http://tile.openstreetmap.org/{z}/{x}/{y}.png';
+					    var osm2 = 'http://tile.openstreetmap.org/{z}/{x}/{y}.png';
+					    var Z = 'http://wms.qgiscloud.com/pawaelus/Z';
+					    var ZH = 'http://wms.qgiscloud.com/pawaelus2/z_hybr';
+					    var ZH2 = 'http://wms.qgiscloud.com/pawaelus/Z';
+						var ZH3 = '';
+						var orto2 = 'http://mapy.geoportal.gov.pl/wss/service/img/guest/ORTO/MapServer/WMSServer';
+
+
+					    var brak = new L.TileLayer(ZH3, {
+					            layers: '',
+					            format: 'image/jpeg',
+					            transparent: true,
+					            version: '1.1.1',
+					        }),
+						
+							topo = new L.TileLayer.WMS(topo, {
+					            layers: 'Raster',
+					            format: 'image/jpeg',
+					            transparent: false,
+					            version: '1.1.1',
+					        }),
+
+					        orto2 = new L.TileLayer.WMS(orto2, {
+					            layers: 'Raster',
+					            format: 'image/jpeg',
+					            transparent: false,
+					            version: '1.1.1',
+					        }),							
+
+					        orto = new L.TileLayer.WMS(orto, {
+					            layers: 'Raster',
+					            format: 'image/jpeg',
+					            transparent: false,
+					            version: '1.1.1',
+					        }),
+					        Z = new L.TileLayer.WMS(Z, {
+					            layers: 'Z',
+					            format: 'image/png',
+					            transparent: false,
+					            version: '1.1.3',
+					        }),
+
+					        Z1 = new L.TileLayer.WMS(ZH2, {
+					            layers: 'lines2',
+					            format: 'image/png',
+					            transparent: true,
+					            version: '1.1.3',
+					        }),
+																					
+							
+					        Z2 = new L.TileLayer.WMS(ZH2, {
+					            layers: 'hydro_line',
+					            format: 'image/png',
+					            transparent: true,
+					            version: '1.1.3',
+					        }),
+							
+					        Z3 = new L.TileLayer.WMS(ZH2, {
+					            layers: 'budynki',
+					            format: 'image/png',
+					            transparent: true,
+					            version: '1.1.3',
+					        }),
+							
+					        Z4 = new L.TileLayer.WMS(ZH2, {
+					            layers: 'polygones',
+					            format: 'image/png',
+					            transparent: true,
+					            version: '1.1.3',
+					        }),
+							
+
+					        ZH = new L.TileLayer.WMS(ZH, {
+					            layers: 'z_hybr',
+					            format: 'image/png',
+					            transparent: true,
+					            version: '1.1.3',
+					        }),
+
+					        osm = new L.tileLayer(osm, {});
+
+					var html = "<div><b>Resizable Control</h5></b><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut</p>";
+
+
+
+
+					    var map = L.map('map', {
+					        minZoom: 13,
+					        maxZoom: 19,
+					        "QGC": Z3,
+					        maxBounds: [
+					            [52.0263, 19.23088],
+					            [51.81703, 19.54571]
+					        ],
+					        layers: [Z]
+					    }).setView([51.855, 19.405], 15);
+
+
+
+					    var baseLayers = {
+							
+							"Mapa bazowa": Z,
+					        "OSM": osm,
+					        "Ortofotomapa": orto,
+					        "Mapa Topograficzna": topo,
+							"Brak": ZH3,
+					    };
+
+					    var baseLayers2 = {
+							
+					    };
+
+
+
+					    var osmb = new OSMBuildings(map).set(geoJSON).style({
+					        wallColor: '#815f33',
+					        roofColor: '#9f6a39'
+					    });
+						
+						L.control.orderlayers(baseLayers, {
+							
+							"Budynki": Z3,							
+							"Drogi": Z1,
+							"Rzeki": Z2, 
+							"Pokrycie": Z4,
+
+
+					    }, {
+					        collapsed: false,
+					        order: 'normal',
+					        title: 'Warstwy'
+					    }).addTo(map);
+						
+						L.control.layers(baseLayers2, {"Budynki 3D": osmb },{collapsed: false}).addTo(map);
+						
+						
+						L.Control.boxzoom({ position:'topleft' }).addTo(map);
+
+					    L.Control.measureControl().addTo(map);
+						
+					    var measureControl = new L.Control.Measure({
+					        position: 'topleft',
+					        primaryLengthUnit: 'kilometers',
+					        secondaryLengthUnit: 'meters',
+					        primaryAreaUnit: 'sqmeters',
+					        secondaryAreaUnit: 'hectares',
+					        activeColor: '#D66425',
+					        completedColor: '#B65824'
+					    }).addTo(map);
+
+
+					    L.control.scale({
+					        maxWidth: 500,
+					        position: "bottomleft",
+					    }).addTo(map);
+
+					    L.control.coordinates({
+					        position: "bottomleft",
+					        decimals: 10,
+					        decimalSeperator: ",",
+					        labelTemplateLat: ": {y}",
+					        labelTemplateLng: "WGS 84: {x}"
+					    }).addTo(map);
+
+					    L.control.coordinates({
+					        position: "bottomleft",
+					        useDMS: true,
+					        labelTemplateLat: "N {y}",
+					        labelTemplateLng: "E {x}",
+					        useLatLngOrder: true
+					    }).addTo(map);
+
+
+					    var loadingControl = L.Control.loading({
+					        separate: true
+					    });
+					    map.addControl(loadingControl);
+
+					    
+					    /*L.control.graphicScale({
+					    	
+					    	doubleLine: true,
+					    	fill: 'hollow',
+					    	showSubunits: true
+					    }).addTo(map) */
+						
+						var resizablebottomleft = new L.ResizableControl({
+						position: 'bottomleft',
+						minimizedHeight: 60,
+						minimizedWidth: 0.1,
+						enlargedHeight: 0.6,
+						enlargedWidth: 0.4,
+						enlargeCallback: function(e) {},
+						minimizeCallback: function(e) {},
+						contentClassName: "resizable-control-content",
+						scrollPaneClassName: "resizable-control-scrollpane",
+						className: "resizable-control-container",
+						jscrollpane: true,
+						appendOnAdd: function(divElement) {}
+					});
+						
+						
+
+						var hash = new L.Hash(map);
+
+					    var miniMap = new L.Control.MiniMap(orto2, {
+					        maxZoom: 10,
+							minZoom: 8,
+							toggleDisplay: true
+					    }).addTo(map);						
+						
+
+					    var sidebar = L.control.sidebar('sidebar').addTo(map);
+					});
+</script>
+</body>
+</html>
